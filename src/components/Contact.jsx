@@ -1,120 +1,3 @@
-// import React from "react";
-
-// const Contact = () => {
-//     return (
-//         <section id="contact" className="w-full py-20 px-[10%] bg-whitesmoke to-white">
-//             <h2 className="text-center text-5xl font-bold">Contact Us</h2>
-//             <p className="text-center text-gray-600 mt-3 text-lg">
-//                 Have a question or feedback? We'd love to hear from you.
-//             </p>
-//             <div className="w-20 h-[3px] bg-[#6c63ff] mx-auto mb-12 rounded"></div>
-
-//             <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16">
-//                 <div className="space-y-6">
-//                     <h3 className="text-3xl font-semibold">Get in Touch</h3>
-//                     <p className="text-gray-600">
-//                         Fill out the form and we'll get back to you shortly.
-//                     </p>
-
-//                     <div className="space-y-4 text-gray-700">
-//                         <p>
-//                             <strong>Address:</strong>{" "}
-//                             <span className="text-[#6c63ff]">BHOPAL, INDIA</span>
-//                         </p>
-//                         <p>
-//                             <strong>Phone:</strong>{" "}
-//                             <span className="text-[#6c63ff]">
-//                                 <a href="tel:9039229672">9039229672</a>
-//                             </span>
-//                         </p>
-//                         <p>
-//                             <strong>Email:</strong>{" "}
-//                             <span className="text-[#6c63ff]">
-//                                 <a href="mailto:ansarikaynat939@gmail.com">
-//                                     ansarikaynat939@gmail.com
-//                                 </a>
-//                             </span>
-//                         </p>
-//                     </div>
-//                 </div>
-
-//                 <form className="space-y-6">
-//                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//                         <div>
-//                             <label className="text-gray-700 font-medium">First Name</label>
-//                             <input
-//                                 type="text"
-//                                 className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-[#6c63ff] outline-none"
-//                                 required
-//                                 placeholder="First Name"
-//                             />
-//                         </div>
-
-//                         <div>
-//                             <label className="text-gray-700 font-medium">Last Name</label>
-//                             <input
-//                                 type="text"
-//                                 className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-[#6c63ff] outline-none"
-//                                 required
-//                                 placeholder="Last Name"
-//                             />
-//                         </div>
-//                     </div>
-
-//                     <div>
-//                         <label className="text-gray-700 font-medium">Email</label>
-//                         <input
-//                             type="email"
-//                             className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-[#6c63ff] outline-none"
-//                             required
-//                             placeholder="Email Address"
-//                         />
-//                     </div>
-
-//                     <div>
-//                         <label className="text-gray-700 font-medium">Phone</label>
-//                         <div className="flex items-center gap-2 p-3 border rounded-lg focus-within:ring-2 focus-within:ring-[#6c63ff]">
-//                             <select className="bg-transparent outline-none">
-//                                 <option>IN</option>
-//                                 <option>US</option>
-//                                 <option>UK</option>
-//                                 <option>CA</option>
-//                             </select>
-
-//                             <input
-//                                 type="tel"
-//                                 className="flex-1 bg-transparent outline-none"
-//                                 required
-//                                 placeholder="123-456-7890"
-//                             />
-//                         </div>
-
-//                     </div>
-
-//                     <div>
-//                         <label className="text-gray-700 font-medium">Message</label>
-//                         <textarea
-//                             rows="5"
-//                             className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-[#6c63ff] outline-none"
-//                             required
-//                             placeholder="Write your message..."
-//                         ></textarea>
-//                     </div>
-
-//                     <button
-//                         type="submit"
-//                         className="w-full bg-[#6c63ff] hover:bg-[#6c63ff] text-white py-4 rounded-lg text-xl font-semibold transition"
-//                     >
-//                         Send Message
-//                     </button>
-//                 </form>
-//             </div>
-//         </section>
-//     );
-// };
-
-// export default Contact;
-
 
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -124,7 +7,7 @@ const Contact = () => {
         firstName: "",
         lastName: "",
         email: "",
-        phoneCode: "IN",
+        // phoneCode: "IN",
         phone: "",
         message: "",
     });
@@ -153,10 +36,10 @@ const Contact = () => {
 
         emailjs
             .send(
-                import.meta.env.local.VITE_EMAILJS_SERVICE_ID,
-                import.meta.env.locak.VITE_EMAILJS_TEMPLATE_ID,
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 msgData,
-                import.meta.env.local.VITE_EMAILJS_PUBLIC_KEY
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             )
             .then(
                 () => {
@@ -165,7 +48,7 @@ const Contact = () => {
                         firstName: "",
                         lastName: "",
                         email: "",
-                        phoneCode: "IN",
+                        // phoneCode: "IN",
                         phone: "",
                         message: "",
                     });

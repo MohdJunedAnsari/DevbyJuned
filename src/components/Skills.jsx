@@ -11,6 +11,11 @@ const Skills = () => {
     "React",
     "AWS",
     "Git & GitHub",
+    "Tailwind Css",
+    "Bootstrap",
+    "SQL",
+    "MongoDB"
+
   ];
 
   return (
